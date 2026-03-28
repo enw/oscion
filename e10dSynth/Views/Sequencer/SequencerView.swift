@@ -100,7 +100,7 @@ struct SequencerView: View {
                 .padding(.horizontal, 4)
             }
         }
-        .frame(height: 36)
+        .frame(height: 44)
     }
 
     private func voiceBadge(vm: SequencerViewModel, trackIndex: Int) -> some View {
