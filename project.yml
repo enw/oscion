@@ -1,0 +1,54 @@
+name: e10dSynth
+options:
+  bundleIdPrefix: com.e10d
+  deploymentTarget:
+    iOS: "17.0"
+  xcodeVersion: "16.0"
+  swift: "6.0"
+
+packages:
+  AudioKit:
+    url: https://github.com/AudioKit/AudioKit
+    exactVersion: 5.6.4
+  SoundpipeAudioKit:
+    url: https://github.com/AudioKit/SoundpipeAudioKit
+    exactVersion: 4.0.3
+  AudioKitEX:
+    url: https://github.com/AudioKit/AudioKitEX
+    exactVersion: 5.6.2
+
+targets:
+  e10dSynth:
+    type: application
+    platform: iOS
+    sources: [e10dSynth]
+    settings:
+      base:
+        INFOPLIST_FILE: e10dSynth/Info.plist
+        PRODUCT_BUNDLE_IDENTIFIER: com.e10d.synth
+        TARGETED_DEVICE_FAMILY: "1,2"
+    dependencies:
+      - package: AudioKit
+        product: AudioKit
+      - package: SoundpipeAudioKit
+        product: SoundpipeAudioKit
+      - package: AudioKitEX
+        product: AudioKitEX
+    info:
+      path: e10dSynth/Info.plist
+      properties:
+        UILaunchStoryboardName: ""
+        UISupportedInterfaceOrientations~ipad:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+        UIBackgroundModes:
+          - audio
+        NSMicrophoneUsageDescription: "Used for audio output routing"
+
+  e10dSynthTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources: [e10dSynthTests]
+    dependencies:
+      - target: e10dSynth
