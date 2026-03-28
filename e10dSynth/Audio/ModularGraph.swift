@@ -44,15 +44,3 @@ final class ModularGraph {
     }
 }
 
-// Codable support for positions
-extension CGPoint: @retroactive Codable {
-    public init(from decoder: Decoder) throws {
-        var c = try decoder.unkeyedContainer()
-        self.init(x: try c.decode(CGFloat.self), y: try c.decode(CGFloat.self))
-    }
-    public func encode(to encoder: Encoder) throws {
-        var c = encoder.unkeyedContainer()
-        try c.encode(x)
-        try c.encode(y)
-    }
-}
