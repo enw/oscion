@@ -75,7 +75,7 @@
 		10795DFDCB92FDB677D02B63 /* ModuleCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleCardView.swift; sourceTree = "<group>"; };
 		181B6A53D366824DAFAF340B /* LFOModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LFOModule.swift; sourceTree = "<group>"; };
 		1DAADBB3C4302469F8CC102E /* ENVModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ENVModule.swift; sourceTree = "<group>"; };
-		23B9EA2321DA3F8C2875F26E /* e10dSynth.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = e10dSynth.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		23B9EA2321DA3F8C2875F26E /* e10dSynth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = e10dSynth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24439AB6D12FE5F426AA5E90 /* Patch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Patch.swift; sourceTree = "<group>"; };
 		29646B2A4D8EA39A17C79A65 /* VCFModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCFModule.swift; sourceTree = "<group>"; };
 		2B8FEE901789FAF3EFD08285 /* OUTModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OUTModule.swift; sourceTree = "<group>"; };
@@ -375,8 +375,6 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1600;
-				TargetAttributes = {
-				};
 			};
 			buildConfigurationList = 709D191F5D4E403C6881145A /* Build configuration list for PBXProject "e10dSynth" */;
 			developmentRegion = en;
@@ -615,6 +613,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 32VWCN9EY6;
 				INFOPLIST_FILE = e10dSynth/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -631,6 +630,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 32VWCN9EY6;
 				INFOPLIST_FILE = e10dSynth/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

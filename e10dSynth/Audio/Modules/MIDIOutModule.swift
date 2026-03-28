@@ -1,4 +1,5 @@
 import Foundation
+import AudioKit
 
 final class MIDIOutModule: SynthModule {
     let id: String
@@ -13,6 +14,7 @@ final class MIDIOutModule: SynthModule {
     let outputs: [Jack] = []
 
     var channel: Int = 1
+    var outputNode: (any Node)? { nil }
 
     init(id: String = UUID().uuidString) {
         self.id = id

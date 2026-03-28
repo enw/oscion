@@ -12,10 +12,10 @@ packages:
     exactVersion: 5.6.4
   SoundpipeAudioKit:
     url: https://github.com/AudioKit/SoundpipeAudioKit
-    exactVersion: 4.0.3
+    exactVersion: 5.6.1
   AudioKitEX:
     url: https://github.com/AudioKit/AudioKitEX
-    exactVersion: 5.4.0
+    exactVersion: 5.6.2
 
 targets:
   e10dSynth:

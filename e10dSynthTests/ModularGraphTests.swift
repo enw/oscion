@@ -1,4 +1,5 @@
 import XCTest
+import AudioKit
 @testable import e10dSynth
 
 final class ModularGraphTests: XCTestCase {
@@ -85,6 +86,7 @@ final class MockModule: SynthModule {
     let name: String = "Mock"
     let inputs: [Jack]
     let outputs: [Jack]
+    var outputNode: (any Node)? { nil }
 
     init(
         id: String,
