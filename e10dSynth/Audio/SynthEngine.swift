@@ -8,11 +8,8 @@ final class SynthEngine {
     static let shared = SynthEngine()
 
     let graph = ModularGraph()
+    let midiEngineInstance = MIDIEngine()
     private(set) var isRunning = false
-
-    // MIDI engine — created in Task 10
-    // Placeholder so later tasks can reference engine.midiEngine
-    // var midiEngine: MIDIEngine  ← added in Task 10
 
     private init() {}
 
