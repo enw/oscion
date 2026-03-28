@@ -35,13 +35,16 @@ final class SynthEngine {
             let vco = VCOModule()
             let vcf = VCFModule()
             let env = ENVModule()
-            vcf.setInput(vco.outputNode!)
-            env.setInput(vcf.outputNode!)
+            guard let vcoOut = vco.outputNode else { fatalError("[SynthEngine] VCOModule has no outputNode") }
+            guard let vcfOut = vcf.outputNode else { fatalError("[SynthEngine] VCFModule has no outputNode after setInput") }
+            vcf.setInput(vcoOut)
+            env.setInput(vcfOut)
             built.append(SynthVoice(vco: vco, vcf: vcf, env: env))
         }
         voices = built
 
-        let envNodes = built.map { $0.env.outputNode! }
+        let envNodes: [Node] = built.compactMap { $0.env.outputNode }
+        guard envNodes.count == built.count else { fatalError("[SynthEngine] One or more ENVModules have no outputNode") }
         voiceMixer = Mixer(envNodes)
         out = OUTModule()
         out.setInput(voiceMixer)
@@ -111,10 +114,10 @@ final class SynthEngine {
 
     private func wireMIDICallbacks() {
         midiEngineInstance.onNoteOn = { [weak self] note, velocity in
-            self?.noteOn(note: note, velocity: velocity)
+            Task { @MainActor [weak self] in self?.noteOn(note: note, velocity: velocity) }
         }
         midiEngineInstance.onNoteOff = { [weak self] note in
-            self?.noteOff(note: note)
+            Task { @MainActor [weak self] in self?.noteOff(note: note) }
         }
     }
 
