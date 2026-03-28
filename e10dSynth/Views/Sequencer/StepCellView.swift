@@ -11,7 +11,7 @@ struct StepCellView: View {
             .overlay(Rectangle().stroke(
                 isCurrent ? Color.synthAmber : Color.synthBorder,
                 lineWidth: isCurrent ? 2 : 0.5))
-            .frame(width: 34, height: 36)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
             .onTapGesture {
                 step.isOn.toggle()
                 UIImpactFeedbackGenerator(style: .light).impactOccurred()

@@ -13,21 +13,28 @@ struct SequencerView: View {
     @State private var editingVoiceTrackIndex: Int? = nil
 
     var body: some View {
-        VStack(spacing: 0) {
-            if let vm {
-                TransportBar(vm: vm)
+        GeometryReader { geo in
+            VStack(spacing: 0) {
+                if let vm {
+                    TransportBar(vm: vm)
 
-                ScrollView(.vertical, showsIndicators: false) {
-                    VStack(spacing: 1) {
+                    // Track rows fill remaining height equally
+                    let trackCount = vm.activePattern.tracks.count
+                    let rowHeight = (geo.size.height - 52) / CGFloat(trackCount)
+
+                    VStack(spacing: 0) {
                         ForEach(vm.activePattern.tracks.indices, id: \.self) { ti in
-                            trackRow(vm: vm, trackIndex: ti)
-                            Divider().background(Color.synthBorder)
+                            trackRow(vm: vm, trackIndex: ti, rowHeight: rowHeight, totalWidth: geo.size.width)
+                            if ti < trackCount - 1 {
+                                Divider().background(Color.synthBorder)
+                            }
                         }
                     }
                 }
             }
+            .background(Color.synthBg)
         }
-        .background(Color.synthBg)
+        .ignoresSafeArea(edges: .bottom)
         .onAppear {
             let seqVm = SequencerViewModel()
             seqVm.synthEngine = engine
@@ -60,47 +67,48 @@ struct SequencerView: View {
     }
 
     @ViewBuilder
-    private func trackRow(vm: SequencerViewModel, trackIndex: Int) -> some View {
+    private func trackRow(vm: SequencerViewModel, trackIndex: Int, rowHeight: CGFloat, totalWidth: CGFloat) -> some View {
+        let headerWidth: CGFloat = 64
+        let stepAreaWidth = totalWidth - headerWidth - 1  // 1 for divider
+        let stepCount = vm.activePattern.tracks[trackIndex].steps.count
+
         HStack(spacing: 0) {
-            VStack(alignment: .leading, spacing: 3) {
+            // Track header
+            VStack(alignment: .leading, spacing: 2) {
                 Text(vm.activePattern.tracks[trackIndex].name)
                     .font(.synthLabel).foregroundStyle(Color.synthGreen).lineLimit(1)
                 HStack(spacing: 4) {
-                    toggleButton("M", isOn: vm.activePattern.tracks[trackIndex].isMuted,
-                                 activeColor: .synthAmber) {
+                    toggleButton("M", isOn: vm.activePattern.tracks[trackIndex].isMuted, activeColor: .synthAmber) {
                         vm.activePattern.tracks[trackIndex].isMuted.toggle()
                     }
-                    toggleButton("S", isOn: vm.activePattern.tracks[trackIndex].isSolo,
-                                 activeColor: .synthGreen) {
+                    toggleButton("S", isOn: vm.activePattern.tracks[trackIndex].isSolo, activeColor: .synthGreen) {
                         vm.activePattern.tracks[trackIndex].isSolo.toggle()
                     }
-                    Spacer()
                     voiceBadge(vm: vm, trackIndex: trackIndex)
                 }
             }
-            .frame(width: 68)
+            .frame(width: headerWidth, height: rowHeight)
             .padding(.horizontal, 6)
 
-            Divider().frame(height: 36).background(Color.synthBorder)
+            Rectangle().fill(Color.synthBorder).frame(width: 1, height: rowHeight)
 
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: 2) {
-                    ForEach(vm.activePattern.tracks[trackIndex].steps.indices, id: \.self) { si in
-                        StepCellView(
-                            step: Binding(
-                                get: { vm.activePattern.tracks[trackIndex].steps[si] },
-                                set: { vm.activePattern.tracks[trackIndex].steps[si] = $0 }
-                            ),
-                            isCurrent: vm.isPlaying && si == vm.currentStep
-                        ) {
-                            editingStepInfo = StepEditInfo(trackIdx: trackIndex, stepIdx: si)
-                        }
+            // Step cells — fill full width, no scroll
+            HStack(spacing: 1) {
+                ForEach(vm.activePattern.tracks[trackIndex].steps.indices, id: \.self) { si in
+                    StepCellView(
+                        step: Binding(
+                            get: { vm.activePattern.tracks[trackIndex].steps[si] },
+                            set: { vm.activePattern.tracks[trackIndex].steps[si] = $0 }
+                        ),
+                        isCurrent: vm.isPlaying && si == vm.currentStep
+                    ) {
+                        editingStepInfo = StepEditInfo(trackIdx: trackIndex, stepIdx: si)
                     }
                 }
-                .padding(.horizontal, 4)
             }
+            .frame(width: stepAreaWidth, height: rowHeight)
         }
-        .frame(height: 44)
+        .frame(height: rowHeight)
     }
 
     private func voiceBadge(vm: SequencerViewModel, trackIndex: Int) -> some View {
