@@ -3,8 +3,9 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         Text("e10d")
-            .font(.system(.largeTitle, design: .monospaced))
+            .font(.synthMonoXl)
+            .foregroundColor(.synthGreen)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(Color.black)
+            .background(Color.synthBg)
     }
 }
