@@ -37,8 +37,8 @@ final class SynthEngine {
             let vcf = VCFModule()
             let env = ENVModule()
             guard let vcoOut = vco.outputNode else { fatalError("[SynthEngine] VCOModule has no outputNode") }
-            guard let vcfOut = vcf.outputNode else { fatalError("[SynthEngine] VCFModule has no outputNode after setInput") }
             vcf.setInput(vcoOut)
+            guard let vcfOut = vcf.outputNode else { fatalError("[SynthEngine] VCFModule has no outputNode after setInput") }
             env.setInput(vcfOut)
             built.append(SynthVoice(vco: vco, vcf: vcf, env: env))
         }
