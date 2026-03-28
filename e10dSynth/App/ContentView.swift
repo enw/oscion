@@ -1,11 +1,22 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(SynthEngine.self) var engine
+
     var body: some View {
-        Text("e10d")
-            .font(.synthMonoXl)
-            .foregroundColor(.synthGreen)
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(Color.synthBg)
+        TabView {
+            RackView()
+                .tabItem { Label("Rack", systemImage: "hexagon") }
+
+            SequencerView()
+                .tabItem { Label("Seq", systemImage: "grid") }
+
+            MIDIRoutingView()
+                .tabItem { Label("MIDI", systemImage: "arrow.left.arrow.right") }
+        }
+        .tint(Color.synthGreen)
+        .onAppear { engine.start() }
+        .toolbarBackground(Color.synthPanel, for: .tabBar)
+        .toolbarBackground(.visible, for: .tabBar)
     }
 }

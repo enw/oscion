@@ -16,12 +16,12 @@ final class SynthEngine {
     func start() {
         guard !isRunning else { return }
         isRunning = true
-        // AudioKit engine start added in Task 6 once modules exist
+        midiEngineInstance.start()
     }
 
     func stop() {
         isRunning = false
-        // AudioKit engine stop added in Task 6
+        midiEngineInstance.stop()
     }
 
     /// Called when the patch graph changes — rebuilds AudioKit node connections.
