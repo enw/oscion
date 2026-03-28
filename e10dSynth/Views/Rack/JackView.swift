@@ -6,6 +6,8 @@ struct JackView: View {
     var isActive: Bool = false
     var onDragStart: ((JackRef, CGPoint) -> Void)?
 
+    @State private var hasFiredDragStart = false
+
     var body: some View {
         ZStack {
             Circle()
@@ -22,25 +24,18 @@ struct JackView: View {
             alignment: .center
         )
         .contentShape(Rectangle().size(CGSize(width: 44, height: 44)))
-        .background(
-            GeometryReader { geo in
-                Color.clear.onAppear {
-                    let frame = geo.frame(in: .global)
-                    let center = CGPoint(x: frame.midX, y: frame.midY)
-                    let ref = JackRef(moduleId: moduleId, jackId: jack.id,
-                                      signalType: jack.signalType, direction: jack.direction)
-                    onDragStart?(ref, center)
-                }
-            }
-        )
         .gesture(
-            DragGesture(minimumDistance: 4, coordinateSpace: .global)
+            DragGesture(minimumDistance: 0, coordinateSpace: .global)
                 .onChanged { g in
-                    if g.translation == CGSize.zero {
+                    if !hasFiredDragStart {
+                        hasFiredDragStart = true
                         let ref = JackRef(moduleId: moduleId, jackId: jack.id,
                                           signalType: jack.signalType, direction: jack.direction)
                         onDragStart?(ref, g.startLocation)
                     }
+                }
+                .onEnded { _ in
+                    hasFiredDragStart = false
                 }
         )
     }

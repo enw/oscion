@@ -54,9 +54,11 @@ struct PatchCableOverlay: View {
     }
 
     private func cableColor(fromJackId: String) -> Color {
-        if fromJackId.contains("audio") { return Color.synthGreen }
-        if fromJackId.contains("cv")    { return Color.synthAmber }
-        return Color.synthRed
+        let type: SignalType
+        if fromJackId.contains("audio") { type = .audio }
+        else if fromJackId.contains("cv") { type = .cv }
+        else { type = .gate }
+        return Color.signalColor(type)
     }
 
     private func nearestPatch(to point: CGPoint) -> Patch? {
