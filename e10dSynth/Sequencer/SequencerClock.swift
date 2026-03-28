@@ -49,7 +49,7 @@ final class SequencerClock {
             self.scheduleTick()
         }
         t.tolerance = interval * 0.1  // improve battery usage
-        RunLoop.current.add(t, forMode: .common)
+        RunLoop.main.add(t, forMode: .common)
         timer = t
     }
 

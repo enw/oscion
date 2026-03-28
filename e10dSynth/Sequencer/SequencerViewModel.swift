@@ -54,10 +54,13 @@ final class SequencerViewModel {
     private func handleTick(_ step: Int) {
         let pattern = activePattern  // snapshot value type; safe to read off main
         let localStep = step % pattern.stepCount
-        DispatchQueue.main.async { [weak self] in self?.currentStep = localStep }
+        currentStep = localStep
+
+        let hasSolo = pattern.tracks.contains { $0.isSolo }
 
         for track in pattern.tracks {
             guard !track.isMuted else { continue }
+            guard !hasSolo || track.isSolo else { continue }
             let s = track.steps[localStep % track.steps.count]
             guard s.isOn else { continue }
             guard s.probability >= 1.0 || Float.random(in: 0...1) <= s.probability else { continue }

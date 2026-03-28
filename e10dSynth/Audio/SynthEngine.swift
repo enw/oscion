@@ -6,6 +6,7 @@ struct SynthVoice {
     let vco: VCOModule
     let vcf: VCFModule
     let env: ENVModule
+    var volume: Float = 0.8
 }
 
 @Observable
@@ -86,12 +87,14 @@ final class SynthEngine {
         v.env.decay     = settings.decay
         v.env.sustain   = settings.sustain
         v.env.release   = settings.release
+        voices[voiceIndex].volume = settings.volume
     }
 
     func noteOn(note: Int, velocity: Int, voiceIndex: Int) {
         guard voices.indices.contains(voiceIndex) else { return }
         let v = voices[voiceIndex]
-        v.vco.noteOn(note, velocity: velocity)
+        let scaledVelocity = max(1, Int(Float(velocity) * v.volume))
+        v.vco.noteOn(note, velocity: scaledVelocity)
         v.env.trigger()
     }
 
