@@ -52,10 +52,11 @@ final class SequencerViewModel {
     }
 
     private func handleTick(_ step: Int) {
-        let localStep = step % activePattern.stepCount
+        let pattern = activePattern  // snapshot value type; safe to read off main
+        let localStep = step % pattern.stepCount
         DispatchQueue.main.async { [weak self] in self?.currentStep = localStep }
 
-        for track in activePattern.tracks {
+        for track in pattern.tracks {
             guard !track.isMuted else { continue }
             let s = track.steps[localStep % track.steps.count]
             guard s.isOn else { continue }
@@ -64,7 +65,7 @@ final class SequencerViewModel {
 
             switch track.voiceType {
             case .internalVoice:
-                guard let vi = activePattern.internalVoiceIndex(for: track.id),
+                guard let vi = pattern.internalVoiceIndex(for: track.id),
                       vi < 4 else { continue }
                 synthEngine?.applySettings(track.voiceSettings, to: vi)
                 synthEngine?.noteOn(note: s.note, velocity: vel, voiceIndex: vi)
