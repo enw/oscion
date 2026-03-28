@@ -53,7 +53,7 @@ final class SequencerViewModel {
 
     private func handleTick(_ step: Int) {
         let localStep = step % activePattern.stepCount
-        DispatchQueue.main.async { self.currentStep = localStep }
+        DispatchQueue.main.async { [weak self] in self?.currentStep = localStep }
 
         for track in activePattern.tracks {
             guard !track.isMuted else { continue }

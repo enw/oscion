@@ -41,14 +41,16 @@ final class SequencerClock {
 
     private func scheduleTick() {
         let interval = swungInterval(for: currentStep)
-        timer = Timer.scheduledTimer(withTimeInterval: interval, repeats: false) { [weak self] _ in
+        let t = Timer.scheduledTimer(withTimeInterval: interval, repeats: false) { [weak self] _ in
             guard let self, self.isRunning else { return }
             self.onTick?(self.currentStep)
             if self.currentStep % 16 == 0 { self.onBar?() }
             self.currentStep += 1
             self.scheduleTick()
         }
-        RunLoop.current.add(timer!, forMode: .common)
+        t.tolerance = interval * 0.1  // improve battery usage
+        RunLoop.current.add(t, forMode: .common)
+        timer = t
     }
 
     private func swungInterval(for step: Int) -> TimeInterval {
