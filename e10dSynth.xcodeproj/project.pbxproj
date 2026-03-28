@@ -7,12 +7,53 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0322CCD64E8D6512716D6264 /* ENVModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAADBB3C4302469F8CC102E /* ENVModule.swift */; };
+		093C69EA6A4EA3AF2CCAA087 /* VCOModuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EE18C453978554966C10E9 /* VCOModuleTests.swift */; };
+		161AD98AD22886C8001B9ABE /* SequencerModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE9D4B6069D8C81B96FE9CB /* SequencerModelTests.swift */; };
+		1F25C1E626BF010FB274811E /* MIDIEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEDC632EFF8085A3E24F75F /* MIDIEngineTests.swift */; };
+		249298E40741780BFE0EBF7F /* RackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D52C072EED4E13646B0977 /* RackView.swift */; };
+		253747A0E2AC0AA3CB66B466 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31AA852E97DF1BD372EDA5F /* Fonts.swift */; };
+		2637CC3AD7CD1557CAA719DC /* Patch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24439AB6D12FE5F426AA5E90 /* Patch.swift */; };
+		33B1A07CA0296E3CCD8B708E /* PatchCableOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D73CFC31A50F719EEE75DF2 /* PatchCableOverlay.swift */; };
+		349BAD4847D32AC34B6F3FBC /* MIDIRoutingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F493E8F0E39BCAAAE0B3BBF5 /* MIDIRoutingView.swift */; };
+		36D1E12A921CDFB6369303D5 /* VCAENVTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31471BC32F3F2AD2061106E /* VCAENVTests.swift */; };
 		39D6719ED5461A7E7138D42C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB26105EE2C6C142472CB720 /* ContentView.swift */; };
+		3D060047C71927D33DEA3675 /* SynthEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BFA2A3508E50D553E356B5 /* SynthEngine.swift */; };
+		3EEAC4E89F2372F857043832 /* Jack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94997FB0EC84A01FEAAFB60B /* Jack.swift */; };
+		4C2F9F3BBCAC675357F17A4D /* VCAModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64ACFB3D8C6A6623B7879988 /* VCAModule.swift */; };
 		4EFC8ED5249A0BA1519873CA /* e10dSynthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3B2CC85B41F1F480FDE382 /* e10dSynthTests.swift */; };
+		529C16737D7D631DD4B68CB7 /* ModularGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634DB3AF26A8711E324C478F /* ModularGraph.swift */; };
+		56435833B0A536B7FDB8C46D /* LFOModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181B6A53D366824DAFAF340B /* LFOModule.swift */; };
+		56B58B3AB79520F26B54F51C /* JackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2C89458DB0254FE803CA66 /* JackView.swift */; };
+		5A4EB4C2B9DA14870CA1735B /* MIDIEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0416BE50AEC19EFFB3049CB3 /* MIDIEngine.swift */; };
 		5CDC3CDCF71F0BA0623C9B65 /* AudioKitEX in Frameworks */ = {isa = PBXBuildFile; productRef = 9F2FF1A1538E30D060FE65F2 /* AudioKitEX */; };
+		5F000A117F7AADE08F5E127F /* ModuleProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6090E531DEC59A79E40CA96 /* ModuleProtocol.swift */; };
+		646EA5253912EBCAD98DE7B2 /* PresetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684D55DA182034F9501CFDCF /* PresetManager.swift */; };
+		6A0A46600BC803429F6C7B31 /* OUTModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8FEE901789FAF3EFD08285 /* OUTModule.swift */; };
 		7D13C1B0C74EEF1CE56C02DD /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 500D850DFB3876BD35CFDF79 /* AudioKit */; };
 		7FB74AE179F079A1EA892615 /* e10dSynthApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46E8D922D1994E9DFA22B7C /* e10dSynthApp.swift */; };
+		80B6B1997F77275DEDA024DB /* PresetManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA6EDEE8676328E1BF68240 /* PresetManagerTests.swift */; };
+		8346A3D08EFC8B2484C0110C /* SequencerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F29842AD0F2C21AA8CACBD /* SequencerViewModel.swift */; };
+		835FDC9C76490CDC197784E8 /* KnobView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B7CE68DC39D139E74851B6 /* KnobView.swift */; };
+		85B46D1251B3FFDC5926B76C /* VCOModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22D3B8798793427EBF11865 /* VCOModule.swift */; };
+		9A255F6373BDE4298FAEB2FD /* ModuleCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10795DFDCB92FDB677D02B63 /* ModuleCardView.swift */; };
+		9D6D0B0982D14C6478F88BC0 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57A18CD0D429026EED5C1FC /* Colors.swift */; };
+		9DEF499398F675EF014FCEA1 /* SequencerModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3974521360AF9F5A09924B3F /* SequencerModels.swift */; };
+		9F260C1793EC1D8E38BDBE5B /* SequencerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7A6EB195A68D41AEAB1337 /* SequencerView.swift */; };
+		A148F0AC9D973475DDD5F2BF /* VCFModuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4749235BCCDD6B8E2DE3E971 /* VCFModuleTests.swift */; };
+		A1AC20910E67823D3AEA11CE /* MIDIOutModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0131C72632BA132E62E3B150 /* MIDIOutModule.swift */; };
+		A4014C7157D1F1C17B16C2F3 /* ModularGraphTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4636338E5889FC27A5D141E0 /* ModularGraphTests.swift */; };
+		A7E3E8F28EDD7A0571BF19E7 /* VCFModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29646B2A4D8EA39A17C79A65 /* VCFModule.swift */; };
+		AD92812D9B154883E1990D26 /* ModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7898781D4E484413187AAF07 /* ModelTests.swift */; };
+		B99EEFEA8435FF2DD4653E3A /* TransportBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A482865DACEE85CD9B402DC1 /* TransportBar.swift */; };
+		B9E7669F11E2953B6221633A /* SequencerClockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783AE4DD0F8900AC78AA565A /* SequencerClockTests.swift */; };
+		BD39AEBB6A20CC7D7B61CCBC /* StepCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF81FB101F60D6D8B5B86270 /* StepCellView.swift */; };
 		D9D7FE14FDDCD628486B933D /* SoundpipeAudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1B9BB46F977E746486770BF9 /* SoundpipeAudioKit */; };
+		DAE62AB07290A4F010C7BAC0 /* ModuleControlViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00695835C1CCC694B597EF9 /* ModuleControlViews.swift */; };
+		DDF2E12B32EDF4042DBA2C3E /* MIDIInModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97687715DACAED8C5BBB2217 /* MIDIInModule.swift */; };
+		DE232FA9F58E131F4D120873 /* RackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBA1A5E50DC62CA98F72FEF /* RackViewModel.swift */; };
+		F08AD68C2EE0F965814E0511 /* SignalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D8808BA24966C415C9C24C /* SignalType.swift */; };
+		F1858C7D082608D46A8F0976 /* SequencerClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939F4C9CAC0BD23D0713503C /* SequencerClock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,12 +67,53 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0131C72632BA132E62E3B150 /* MIDIOutModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MIDIOutModule.swift; sourceTree = "<group>"; };
+		0416BE50AEC19EFFB3049CB3 /* MIDIEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MIDIEngine.swift; sourceTree = "<group>"; };
+		0DEDC632EFF8085A3E24F75F /* MIDIEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MIDIEngineTests.swift; sourceTree = "<group>"; };
+		10795DFDCB92FDB677D02B63 /* ModuleCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleCardView.swift; sourceTree = "<group>"; };
+		181B6A53D366824DAFAF340B /* LFOModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LFOModule.swift; sourceTree = "<group>"; };
+		1DAADBB3C4302469F8CC102E /* ENVModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ENVModule.swift; sourceTree = "<group>"; };
 		23B9EA2321DA3F8C2875F26E /* e10dSynth.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = e10dSynth.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		24439AB6D12FE5F426AA5E90 /* Patch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Patch.swift; sourceTree = "<group>"; };
+		29646B2A4D8EA39A17C79A65 /* VCFModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCFModule.swift; sourceTree = "<group>"; };
+		2B8FEE901789FAF3EFD08285 /* OUTModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OUTModule.swift; sourceTree = "<group>"; };
+		3974521360AF9F5A09924B3F /* SequencerModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequencerModels.swift; sourceTree = "<group>"; };
 		3E084323EBE7142416BE5E57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		3FE9D4B6069D8C81B96FE9CB /* SequencerModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequencerModelTests.swift; sourceTree = "<group>"; };
+		41B7CE68DC39D139E74851B6 /* KnobView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnobView.swift; sourceTree = "<group>"; };
+		45D52C072EED4E13646B0977 /* RackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RackView.swift; sourceTree = "<group>"; };
+		4636338E5889FC27A5D141E0 /* ModularGraphTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModularGraphTests.swift; sourceTree = "<group>"; };
+		4749235BCCDD6B8E2DE3E971 /* VCFModuleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCFModuleTests.swift; sourceTree = "<group>"; };
+		55EE18C453978554966C10E9 /* VCOModuleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCOModuleTests.swift; sourceTree = "<group>"; };
 		5C3B2CC85B41F1F480FDE382 /* e10dSynthTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = e10dSynthTests.swift; sourceTree = "<group>"; };
+		5D73CFC31A50F719EEE75DF2 /* PatchCableOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchCableOverlay.swift; sourceTree = "<group>"; };
+		634DB3AF26A8711E324C478F /* ModularGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModularGraph.swift; sourceTree = "<group>"; };
+		64ACFB3D8C6A6623B7879988 /* VCAModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCAModule.swift; sourceTree = "<group>"; };
+		66F29842AD0F2C21AA8CACBD /* SequencerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequencerViewModel.swift; sourceTree = "<group>"; };
+		684D55DA182034F9501CFDCF /* PresetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetManager.swift; sourceTree = "<group>"; };
 		6DC3394929B8E500369D1509 /* e10dSynthTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = e10dSynthTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		783AE4DD0F8900AC78AA565A /* SequencerClockTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequencerClockTests.swift; sourceTree = "<group>"; };
+		7898781D4E484413187AAF07 /* ModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelTests.swift; sourceTree = "<group>"; };
+		7F7A6EB195A68D41AEAB1337 /* SequencerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequencerView.swift; sourceTree = "<group>"; };
+		939F4C9CAC0BD23D0713503C /* SequencerClock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequencerClock.swift; sourceTree = "<group>"; };
+		94997FB0EC84A01FEAAFB60B /* Jack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jack.swift; sourceTree = "<group>"; };
+		97687715DACAED8C5BBB2217 /* MIDIInModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MIDIInModule.swift; sourceTree = "<group>"; };
+		9DA6EDEE8676328E1BF68240 /* PresetManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetManagerTests.swift; sourceTree = "<group>"; };
+		A482865DACEE85CD9B402DC1 /* TransportBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportBar.swift; sourceTree = "<group>"; };
 		B46E8D922D1994E9DFA22B7C /* e10dSynthApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = e10dSynthApp.swift; sourceTree = "<group>"; };
+		B57A18CD0D429026EED5C1FC /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		B6090E531DEC59A79E40CA96 /* ModuleProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleProtocol.swift; sourceTree = "<group>"; };
+		BF2C89458DB0254FE803CA66 /* JackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JackView.swift; sourceTree = "<group>"; };
+		C31471BC32F3F2AD2061106E /* VCAENVTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCAENVTests.swift; sourceTree = "<group>"; };
+		C31AA852E97DF1BD372EDA5F /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		D22D3B8798793427EBF11865 /* VCOModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCOModule.swift; sourceTree = "<group>"; };
+		E00695835C1CCC694B597EF9 /* ModuleControlViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleControlViews.swift; sourceTree = "<group>"; };
+		E6BFA2A3508E50D553E356B5 /* SynthEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynthEngine.swift; sourceTree = "<group>"; };
+		F0D8808BA24966C415C9C24C /* SignalType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalType.swift; sourceTree = "<group>"; };
+		F493E8F0E39BCAAAE0B3BBF5 /* MIDIRoutingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MIDIRoutingView.swift; sourceTree = "<group>"; };
 		FB26105EE2C6C142472CB720 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FCBA1A5E50DC62CA98F72FEF /* RackViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RackViewModel.swift; sourceTree = "<group>"; };
+		FF81FB101F60D6D8B5B86270 /* StepCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepCellView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,21 +130,116 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C63544E0BB10BE5A2185401 /* Sequencer */ = {
+			isa = PBXGroup;
+			children = (
+				7F7A6EB195A68D41AEAB1337 /* SequencerView.swift */,
+				FF81FB101F60D6D8B5B86270 /* StepCellView.swift */,
+				A482865DACEE85CD9B402DC1 /* TransportBar.swift */,
+			);
+			path = Sequencer;
+			sourceTree = "<group>";
+		};
+		514D2C4C8AD00CEB8AD971BF /* Presets */ = {
+			isa = PBXGroup;
+			children = (
+				684D55DA182034F9501CFDCF /* PresetManager.swift */,
+			);
+			path = Presets;
+			sourceTree = "<group>";
+		};
+		5318B832BBC8D0F763C9AECB /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				634DB3AF26A8711E324C478F /* ModularGraph.swift */,
+				E6BFA2A3508E50D553E356B5 /* SynthEngine.swift */,
+				79E3E236FB44AD3CA56C2853 /* Modules */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
 		5B9B10C1394B979D2BF85010 /* e10dSynth */ = {
 			isa = PBXGroup;
 			children = (
 				3E084323EBE7142416BE5E57 /* Info.plist */,
 				EDC97AE8DA90A8BFFDBC0FCC /* App */,
+				5318B832BBC8D0F763C9AECB /* Audio */,
+				76C5ADCA22FB78B5232CF8DB /* MIDI */,
+				E9DCEF448E89BC448789F6DA /* Models */,
+				514D2C4C8AD00CEB8AD971BF /* Presets */,
+				71BA870E8CD3BDC2B72E08A4 /* Sequencer */,
+				98F4753B23A01E0738A7D0D5 /* Style */,
+				B150E0D9B3284766A45687B5 /* ViewModels */,
+				C6F76408D76B7BFE52FE291E /* Views */,
 			);
 			path = e10dSynth;
+			sourceTree = "<group>";
+		};
+		71BA870E8CD3BDC2B72E08A4 /* Sequencer */ = {
+			isa = PBXGroup;
+			children = (
+				939F4C9CAC0BD23D0713503C /* SequencerClock.swift */,
+				3974521360AF9F5A09924B3F /* SequencerModels.swift */,
+				66F29842AD0F2C21AA8CACBD /* SequencerViewModel.swift */,
+			);
+			path = Sequencer;
+			sourceTree = "<group>";
+		};
+		754C87FF8C5E656F376A20DE /* MIDI */ = {
+			isa = PBXGroup;
+			children = (
+				F493E8F0E39BCAAAE0B3BBF5 /* MIDIRoutingView.swift */,
+			);
+			path = MIDI;
+			sourceTree = "<group>";
+		};
+		76C5ADCA22FB78B5232CF8DB /* MIDI */ = {
+			isa = PBXGroup;
+			children = (
+				0416BE50AEC19EFFB3049CB3 /* MIDIEngine.swift */,
+			);
+			path = MIDI;
+			sourceTree = "<group>";
+		};
+		79E3E236FB44AD3CA56C2853 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				1DAADBB3C4302469F8CC102E /* ENVModule.swift */,
+				181B6A53D366824DAFAF340B /* LFOModule.swift */,
+				97687715DACAED8C5BBB2217 /* MIDIInModule.swift */,
+				0131C72632BA132E62E3B150 /* MIDIOutModule.swift */,
+				2B8FEE901789FAF3EFD08285 /* OUTModule.swift */,
+				64ACFB3D8C6A6623B7879988 /* VCAModule.swift */,
+				29646B2A4D8EA39A17C79A65 /* VCFModule.swift */,
+				D22D3B8798793427EBF11865 /* VCOModule.swift */,
+			);
+			path = Modules;
 			sourceTree = "<group>";
 		};
 		8B9FB2ACA8157F185751EFB0 /* e10dSynthTests */ = {
 			isa = PBXGroup;
 			children = (
 				5C3B2CC85B41F1F480FDE382 /* e10dSynthTests.swift */,
+				0DEDC632EFF8085A3E24F75F /* MIDIEngineTests.swift */,
+				7898781D4E484413187AAF07 /* ModelTests.swift */,
+				4636338E5889FC27A5D141E0 /* ModularGraphTests.swift */,
+				9DA6EDEE8676328E1BF68240 /* PresetManagerTests.swift */,
+				783AE4DD0F8900AC78AA565A /* SequencerClockTests.swift */,
+				3FE9D4B6069D8C81B96FE9CB /* SequencerModelTests.swift */,
+				C31471BC32F3F2AD2061106E /* VCAENVTests.swift */,
+				4749235BCCDD6B8E2DE3E971 /* VCFModuleTests.swift */,
+				55EE18C453978554966C10E9 /* VCOModuleTests.swift */,
 			);
 			path = e10dSynthTests;
+			sourceTree = "<group>";
+		};
+		98F4753B23A01E0738A7D0D5 /* Style */ = {
+			isa = PBXGroup;
+			children = (
+				B57A18CD0D429026EED5C1FC /* Colors.swift */,
+				C31AA852E97DF1BD372EDA5F /* Fonts.swift */,
+			);
+			path = Style;
 			sourceTree = "<group>";
 		};
 		9C565624063D994ADAAD574E /* Products */ = {
@@ -74,6 +251,34 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		A97C5CDA03DADD7DB3C8F4A0 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				41B7CE68DC39D139E74851B6 /* KnobView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		B150E0D9B3284766A45687B5 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				FCBA1A5E50DC62CA98F72FEF /* RackViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		B3EF5C807C7A8086A7F888F3 /* Rack */ = {
+			isa = PBXGroup;
+			children = (
+				BF2C89458DB0254FE803CA66 /* JackView.swift */,
+				10795DFDCB92FDB677D02B63 /* ModuleCardView.swift */,
+				E00695835C1CCC694B597EF9 /* ModuleControlViews.swift */,
+				5D73CFC31A50F719EEE75DF2 /* PatchCableOverlay.swift */,
+				45D52C072EED4E13646B0977 /* RackView.swift */,
+			);
+			path = Rack;
+			sourceTree = "<group>";
+		};
 		C54DB9DCC0154722CBEE7AD0 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +286,28 @@
 				8B9FB2ACA8157F185751EFB0 /* e10dSynthTests */,
 				9C565624063D994ADAAD574E /* Products */,
 			);
+			sourceTree = "<group>";
+		};
+		C6F76408D76B7BFE52FE291E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A97C5CDA03DADD7DB3C8F4A0 /* Components */,
+				754C87FF8C5E656F376A20DE /* MIDI */,
+				B3EF5C807C7A8086A7F888F3 /* Rack */,
+				0C63544E0BB10BE5A2185401 /* Sequencer */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E9DCEF448E89BC448789F6DA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				94997FB0EC84A01FEAAFB60B /* Jack.swift */,
+				B6090E531DEC59A79E40CA96 /* ModuleProtocol.swift */,
+				24439AB6D12FE5F426AA5E90 /* Patch.swift */,
+				F0D8808BA24966C415C9C24C /* SignalType.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		EDC97AE8DA90A8BFFDBC0FCC /* App */ = {
@@ -175,7 +402,39 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D6D0B0982D14C6478F88BC0 /* Colors.swift in Sources */,
 				39D6719ED5461A7E7138D42C /* ContentView.swift in Sources */,
+				0322CCD64E8D6512716D6264 /* ENVModule.swift in Sources */,
+				253747A0E2AC0AA3CB66B466 /* Fonts.swift in Sources */,
+				3EEAC4E89F2372F857043832 /* Jack.swift in Sources */,
+				56B58B3AB79520F26B54F51C /* JackView.swift in Sources */,
+				835FDC9C76490CDC197784E8 /* KnobView.swift in Sources */,
+				56435833B0A536B7FDB8C46D /* LFOModule.swift in Sources */,
+				5A4EB4C2B9DA14870CA1735B /* MIDIEngine.swift in Sources */,
+				DDF2E12B32EDF4042DBA2C3E /* MIDIInModule.swift in Sources */,
+				A1AC20910E67823D3AEA11CE /* MIDIOutModule.swift in Sources */,
+				349BAD4847D32AC34B6F3FBC /* MIDIRoutingView.swift in Sources */,
+				529C16737D7D631DD4B68CB7 /* ModularGraph.swift in Sources */,
+				9A255F6373BDE4298FAEB2FD /* ModuleCardView.swift in Sources */,
+				DAE62AB07290A4F010C7BAC0 /* ModuleControlViews.swift in Sources */,
+				5F000A117F7AADE08F5E127F /* ModuleProtocol.swift in Sources */,
+				6A0A46600BC803429F6C7B31 /* OUTModule.swift in Sources */,
+				2637CC3AD7CD1557CAA719DC /* Patch.swift in Sources */,
+				33B1A07CA0296E3CCD8B708E /* PatchCableOverlay.swift in Sources */,
+				646EA5253912EBCAD98DE7B2 /* PresetManager.swift in Sources */,
+				249298E40741780BFE0EBF7F /* RackView.swift in Sources */,
+				DE232FA9F58E131F4D120873 /* RackViewModel.swift in Sources */,
+				F1858C7D082608D46A8F0976 /* SequencerClock.swift in Sources */,
+				9DEF499398F675EF014FCEA1 /* SequencerModels.swift in Sources */,
+				9F260C1793EC1D8E38BDBE5B /* SequencerView.swift in Sources */,
+				8346A3D08EFC8B2484C0110C /* SequencerViewModel.swift in Sources */,
+				F08AD68C2EE0F965814E0511 /* SignalType.swift in Sources */,
+				BD39AEBB6A20CC7D7B61CCBC /* StepCellView.swift in Sources */,
+				3D060047C71927D33DEA3675 /* SynthEngine.swift in Sources */,
+				B99EEFEA8435FF2DD4653E3A /* TransportBar.swift in Sources */,
+				4C2F9F3BBCAC675357F17A4D /* VCAModule.swift in Sources */,
+				A7E3E8F28EDD7A0571BF19E7 /* VCFModule.swift in Sources */,
+				85B46D1251B3FFDC5926B76C /* VCOModule.swift in Sources */,
 				7FB74AE179F079A1EA892615 /* e10dSynthApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -184,6 +443,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F25C1E626BF010FB274811E /* MIDIEngineTests.swift in Sources */,
+				AD92812D9B154883E1990D26 /* ModelTests.swift in Sources */,
+				A4014C7157D1F1C17B16C2F3 /* ModularGraphTests.swift in Sources */,
+				80B6B1997F77275DEDA024DB /* PresetManagerTests.swift in Sources */,
+				B9E7669F11E2953B6221633A /* SequencerClockTests.swift in Sources */,
+				161AD98AD22886C8001B9ABE /* SequencerModelTests.swift in Sources */,
+				36D1E12A921CDFB6369303D5 /* VCAENVTests.swift in Sources */,
+				A148F0AC9D973475DDD5F2BF /* VCFModuleTests.swift in Sources */,
+				093C69EA6A4EA3AF2CCAA087 /* VCOModuleTests.swift in Sources */,
 				4EFC8ED5249A0BA1519873CA /* e10dSynthTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -420,7 +688,7 @@
 			repositoryURL = "https://github.com/AudioKit/AudioKitEX";
 			requirement = {
 				kind = exactVersion;
-				version = 5.6.2;
+				version = 5.4.0;
 			};
 		};
 		8D34FE98BD77E2F1BDC30888 /* XCRemoteSwiftPackageReference "AudioKit" */ = {

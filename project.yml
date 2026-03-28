@@ -15,7 +15,7 @@ packages:
     exactVersion: 4.0.3
   AudioKitEX:
     url: https://github.com/AudioKit/AudioKitEX
-    exactVersion: 5.6.2
+    exactVersion: 5.4.0
 
 targets:
   e10dSynth:
