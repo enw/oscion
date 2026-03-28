@@ -10,6 +10,7 @@ struct SequencerView: View {
     @Environment(SynthEngine.self) var engine
     @State private var vm: SequencerViewModel?
     @State private var editingStepInfo: StepEditInfo? = nil
+    @State private var editingVoiceTrackIndex: Int? = nil
 
     var body: some View {
         VStack(spacing: 0) {
@@ -41,6 +42,21 @@ struct SequencerView: View {
                 ))
             }
         }
+        .sheet(item: Binding(
+            get: { editingVoiceTrackIndex.map { IdentifiableInt(value: $0) } },
+            set: { editingVoiceTrackIndex = $0?.value }
+        )) { item in
+            if let vm {
+                VoiceEditorSheet(
+                    track: Binding(
+                        get: { vm.activePattern.tracks[item.value] },
+                        set: { vm.activePattern.tracks[item.value] = $0 }
+                    ),
+                    internalSlotsFull: vm.activePattern.internalVoiceCount >= 4
+                        && vm.activePattern.tracks[item.value].voiceType != .internalVoice
+                )
+            }
+        }
     }
 
     @ViewBuilder
@@ -49,7 +65,7 @@ struct SequencerView: View {
             VStack(alignment: .leading, spacing: 3) {
                 Text(vm.activePattern.tracks[trackIndex].name)
                     .font(.synthLabel).foregroundStyle(Color.synthGreen).lineLimit(1)
-                HStack(spacing: 6) {
+                HStack(spacing: 4) {
                     toggleButton("M", isOn: vm.activePattern.tracks[trackIndex].isMuted,
                                  activeColor: .synthAmber) {
                         vm.activePattern.tracks[trackIndex].isMuted.toggle()
@@ -58,6 +74,8 @@ struct SequencerView: View {
                                  activeColor: .synthGreen) {
                         vm.activePattern.tracks[trackIndex].isSolo.toggle()
                     }
+                    Spacer()
+                    voiceBadge(vm: vm, trackIndex: trackIndex)
                 }
             }
             .frame(width: 68)
@@ -85,6 +103,29 @@ struct SequencerView: View {
         .frame(height: 36)
     }
 
+    private func voiceBadge(vm: SequencerViewModel, trackIndex: Int) -> some View {
+        let track = vm.activePattern.tracks[trackIndex]
+        let (label, color): (String, Color) = {
+            switch track.voiceType {
+            case .internalVoice:
+                let idx = vm.activePattern.internalVoiceIndex(for: track.id) ?? 0
+                return ("I\(idx + 1)", .synthGreen)
+            case .midiOut(let ch):
+                return ("M\(ch)", Color(red: 0.2, green: 0.6, blue: 1.0))
+            }
+        }()
+        return Button {
+            editingVoiceTrackIndex = trackIndex
+        } label: {
+            Text(label)
+                .font(.synthLabel)
+                .foregroundStyle(Color.synthBg)
+                .padding(.horizontal, 3)
+                .padding(.vertical, 1)
+                .background(color)
+        }
+    }
+
     private func toggleButton(_ label: String, isOn: Bool, activeColor: Color, action: @escaping () -> Void) -> some View {
         Button(action: action) {
             Text(label).font(.synthLabel)
@@ -93,6 +134,11 @@ struct SequencerView: View {
                 .background(isOn ? activeColor : Color.clear)
         }
     }
+}
+
+private struct IdentifiableInt: Identifiable {
+    let value: Int
+    var id: Int { value }
 }
 
 struct StepEditSheet: View {
@@ -121,4 +167,11 @@ struct StepEditSheet: View {
         .background(Color.synthPanel)
         .presentationDetents([.height(260)])
     }
+}
+
+// Temporary stub — replaced in Task 5
+struct VoiceEditorSheet: View {
+    @Binding var track: Track
+    let internalSlotsFull: Bool
+    var body: some View { EmptyView() }
 }
