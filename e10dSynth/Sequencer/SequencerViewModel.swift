@@ -61,17 +61,24 @@ final class SequencerViewModel {
             guard s.isOn else { continue }
             guard s.probability >= 1.0 || Float.random(in: 0...1) <= s.probability else { continue }
             let vel = s.isAccent ? min(127, s.velocity + 20) : s.velocity
-            midiEngine?.sendNoteOn(note: s.note, velocity: vel, channel: 1)
-            synthEngine?.noteOn(note: s.note, velocity: vel)
 
-            // Schedule noteOff after step.length fraction of the step interval
-            // so the envelope release phase has time to play
-            let noteOffDelay = clock.stepInterval * Double(s.length)
-            let noteToOff = s.note
-            let ch = 1
-            DispatchQueue.main.asyncAfter(deadline: .now() + noteOffDelay) { [weak self] in
-                self?.midiEngine?.sendNoteOff(note: noteToOff, channel: ch)
-                self?.synthEngine?.noteOff(note: noteToOff)
+            switch track.voiceType {
+            case .internalVoice:
+                guard let vi = activePattern.internalVoiceIndex(for: track.id),
+                      vi < 4 else { continue }
+                synthEngine?.applySettings(track.voiceSettings, to: vi)
+                synthEngine?.noteOn(note: s.note, velocity: vel, voiceIndex: vi)
+                let noteOffDelay = clock.stepInterval * Double(s.length)
+                DispatchQueue.main.asyncAfter(deadline: .now() + noteOffDelay) { [weak self] in
+                    self?.synthEngine?.noteOff(note: s.note, voiceIndex: vi)
+                }
+
+            case .midiOut(let channel):
+                midiEngine?.sendNoteOn(note: s.note, velocity: vel, channel: channel)
+                let noteOffDelay = clock.stepInterval * Double(s.length)
+                DispatchQueue.main.asyncAfter(deadline: .now() + noteOffDelay) { [weak self] in
+                    self?.midiEngine?.sendNoteOff(note: s.note, channel: channel)
+                }
             }
         }
 
