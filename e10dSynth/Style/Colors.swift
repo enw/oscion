@@ -25,13 +25,12 @@ extension Color {
     }
 }
 
-// TODO: uncomment after SignalType is defined (Task 3)
-// extension Color {
-//     static func signalColor(_ type: SignalType) -> Color {
-//         switch type {
-//         case .audio: return .synthGreen
-//         case .cv:    return .synthAmber
-//         case .gate:  return .synthRed
-//         }
-//     }
-// }
+extension Color {
+    static func signalColor(_ type: SignalType) -> Color {
+        switch type {
+        case .audio: return .synthGreen
+        case .cv:    return .synthAmber
+        case .gate:  return .synthRed
+        }
+    }
+}
