@@ -79,4 +79,49 @@ final class SequencerModelTests: XCTestCase {
         let decoded = try JSONDecoder().decode(Track.self, from: data)
         XCTAssertTrue(decoded.steps[5].isOn)
     }
+
+    func testTrackVoiceTypeDefaultIsInternal() {
+        let track = Track()
+        if case .internalVoice = track.voiceType { } else {
+            XCTFail("Expected internalVoice default")
+        }
+    }
+
+    func testTrackVoiceTypeCodableRoundTrip() throws {
+        var track = Track()
+        track.voiceType = .midiOut(channel: 7)
+        let data = try JSONEncoder().encode(track)
+        let decoded = try JSONDecoder().decode(Track.self, from: data)
+        if case .midiOut(let ch) = decoded.voiceType {
+            XCTAssertEqual(ch, 7)
+        } else {
+            XCTFail("Expected midiOut after round-trip")
+        }
+    }
+
+    func testVoiceSettingsDefaults() {
+        let s = TrackVoiceSettings()
+        XCTAssertEqual(s.waveform, .sawtooth)
+        XCTAssertEqual(s.octave, 4)
+        XCTAssertEqual(s.cutoff, 1000, accuracy: 0.01)
+    }
+
+    func testInternalVoiceCountHelper() {
+        var pattern = Pattern()
+        // default: all 8 tracks are .internalVoice
+        XCTAssertEqual(pattern.internalVoiceCount, 8)
+        pattern.tracks[0].voiceType = .midiOut(channel: 1)
+        XCTAssertEqual(pattern.internalVoiceCount, 7)
+    }
+
+    func testInternalVoiceIndexForTrack() {
+        var pattern = Pattern()
+        pattern.tracks[1].voiceType = .midiOut(channel: 2)
+        // track[0] = internal → index 0
+        // track[1] = midi → no index
+        // track[2] = internal → index 1
+        XCTAssertEqual(pattern.internalVoiceIndex(for: pattern.tracks[0].id), 0)
+        XCTAssertNil(pattern.internalVoiceIndex(for: pattern.tracks[1].id))
+        XCTAssertEqual(pattern.internalVoiceIndex(for: pattern.tracks[2].id), 1)
+    }
 }

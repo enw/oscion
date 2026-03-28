@@ -61,8 +61,18 @@ final class SequencerViewModel {
             guard s.isOn else { continue }
             guard s.probability >= 1.0 || Float.random(in: 0...1) <= s.probability else { continue }
             let vel = s.isAccent ? min(127, s.velocity + 20) : s.velocity
-            midiEngine?.sendNoteOn(note: s.note, velocity: vel, channel: track.midiChannel)
+            midiEngine?.sendNoteOn(note: s.note, velocity: vel, channel: 1)
             synthEngine?.noteOn(note: s.note, velocity: vel)
+
+            // Schedule noteOff after step.length fraction of the step interval
+            // so the envelope release phase has time to play
+            let noteOffDelay = clock.stepInterval * Double(s.length)
+            let noteToOff = s.note
+            let ch = 1
+            DispatchQueue.main.asyncAfter(deadline: .now() + noteOffDelay) { [weak self] in
+                self?.midiEngine?.sendNoteOff(note: noteToOff, channel: ch)
+                self?.synthEngine?.noteOff(note: noteToOff)
+            }
         }
 
         for _ in 0..<6 { midiEngine?.sendClock() }
