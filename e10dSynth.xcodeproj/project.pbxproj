@@ -29,6 +29,7 @@
 		5CDC3CDCF71F0BA0623C9B65 /* AudioKitEX in Frameworks */ = {isa = PBXBuildFile; productRef = 9F2FF1A1538E30D060FE65F2 /* AudioKitEX */; };
 		5F000A117F7AADE08F5E127F /* ModuleProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6090E531DEC59A79E40CA96 /* ModuleProtocol.swift */; };
 		646EA5253912EBCAD98DE7B2 /* PresetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684D55DA182034F9501CFDCF /* PresetManager.swift */; };
+		64E92CC4FD3F0270A3896A5D /* SynthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42FD613C204A7CE6CCCD90B /* SynthView.swift */; };
 		6A0A46600BC803429F6C7B31 /* OUTModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8FEE901789FAF3EFD08285 /* OUTModule.swift */; };
 		7D13C1B0C74EEF1CE56C02DD /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 500D850DFB3876BD35CFDF79 /* AudioKit */; };
 		7FB74AE179F079A1EA892615 /* e10dSynthApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46E8D922D1994E9DFA22B7C /* e10dSynthApp.swift */; };
@@ -48,6 +49,7 @@
 		B99EEFEA8435FF2DD4653E3A /* TransportBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A482865DACEE85CD9B402DC1 /* TransportBar.swift */; };
 		B9E7669F11E2953B6221633A /* SequencerClockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783AE4DD0F8900AC78AA565A /* SequencerClockTests.swift */; };
 		BD39AEBB6A20CC7D7B61CCBC /* StepCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF81FB101F60D6D8B5B86270 /* StepCellView.swift */; };
+		D79581E64CDD76157A041C1D /* VoiceEditorSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DC9912208B6776334508AB /* VoiceEditorSheet.swift */; };
 		D9D7FE14FDDCD628486B933D /* SoundpipeAudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1B9BB46F977E746486770BF9 /* SoundpipeAudioKit */; };
 		DAE62AB07290A4F010C7BAC0 /* ModuleControlViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00695835C1CCC694B597EF9 /* ModuleControlViews.swift */; };
 		DDF2E12B32EDF4042DBA2C3E /* MIDIInModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97687715DACAED8C5BBB2217 /* MIDIInModule.swift */; };
@@ -77,6 +79,7 @@
 		24439AB6D12FE5F426AA5E90 /* Patch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Patch.swift; sourceTree = "<group>"; };
 		29646B2A4D8EA39A17C79A65 /* VCFModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCFModule.swift; sourceTree = "<group>"; };
 		2B8FEE901789FAF3EFD08285 /* OUTModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OUTModule.swift; sourceTree = "<group>"; };
+		37DC9912208B6776334508AB /* VoiceEditorSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceEditorSheet.swift; sourceTree = "<group>"; };
 		3974521360AF9F5A09924B3F /* SequencerModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequencerModels.swift; sourceTree = "<group>"; };
 		3E084323EBE7142416BE5E57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		3FE9D4B6069D8C81B96FE9CB /* SequencerModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequencerModelTests.swift; sourceTree = "<group>"; };
@@ -100,6 +103,7 @@
 		97687715DACAED8C5BBB2217 /* MIDIInModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MIDIInModule.swift; sourceTree = "<group>"; };
 		9DA6EDEE8676328E1BF68240 /* PresetManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetManagerTests.swift; sourceTree = "<group>"; };
 		A482865DACEE85CD9B402DC1 /* TransportBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportBar.swift; sourceTree = "<group>"; };
+		B42FD613C204A7CE6CCCD90B /* SynthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynthView.swift; sourceTree = "<group>"; };
 		B46E8D922D1994E9DFA22B7C /* e10dSynthApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = e10dSynthApp.swift; sourceTree = "<group>"; };
 		B57A18CD0D429026EED5C1FC /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		B6090E531DEC59A79E40CA96 /* ModuleProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleProtocol.swift; sourceTree = "<group>"; };
@@ -136,6 +140,7 @@
 				7F7A6EB195A68D41AEAB1337 /* SequencerView.swift */,
 				FF81FB101F60D6D8B5B86270 /* StepCellView.swift */,
 				A482865DACEE85CD9B402DC1 /* TransportBar.swift */,
+				37DC9912208B6776334508AB /* VoiceEditorSheet.swift */,
 			);
 			path = Sequencer;
 			sourceTree = "<group>";
@@ -291,6 +296,7 @@
 		C6F76408D76B7BFE52FE291E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B42FD613C204A7CE6CCCD90B /* SynthView.swift */,
 				A97C5CDA03DADD7DB3C8F4A0 /* Components */,
 				754C87FF8C5E656F376A20DE /* MIDI */,
 				B3EF5C807C7A8086A7F888F3 /* Rack */,
@@ -431,10 +437,12 @@
 				F08AD68C2EE0F965814E0511 /* SignalType.swift in Sources */,
 				BD39AEBB6A20CC7D7B61CCBC /* StepCellView.swift in Sources */,
 				3D060047C71927D33DEA3675 /* SynthEngine.swift in Sources */,
+				64E92CC4FD3F0270A3896A5D /* SynthView.swift in Sources */,
 				B99EEFEA8435FF2DD4653E3A /* TransportBar.swift in Sources */,
 				4C2F9F3BBCAC675357F17A4D /* VCAModule.swift in Sources */,
 				A7E3E8F28EDD7A0571BF19E7 /* VCFModule.swift in Sources */,
 				85B46D1251B3FFDC5926B76C /* VCOModule.swift in Sources */,
+				D79581E64CDD76157A041C1D /* VoiceEditorSheet.swift in Sources */,
 				7FB74AE179F079A1EA892615 /* e10dSynthApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -688,7 +696,7 @@
 			repositoryURL = "https://github.com/AudioKit/AudioKitEX";
 			requirement = {
 				kind = exactVersion;
-				version = 5.4.0;
+				version = 5.6.2;
 			};
 		};
 		8D34FE98BD77E2F1BDC30888 /* XCRemoteSwiftPackageReference "AudioKit" */ = {
@@ -704,7 +712,7 @@
 			repositoryURL = "https://github.com/AudioKit/SoundpipeAudioKit";
 			requirement = {
 				kind = exactVersion;
-				version = 4.0.3;
+				version = 5.6.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

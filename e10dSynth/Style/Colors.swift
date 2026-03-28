@@ -11,6 +11,7 @@ extension Color {
     static let synthPanel    = Color(hex: "#0f1a0f")
     static let synthBorder   = Color(hex: "#1e3a1e")
     static let synthText     = Color(hex: "#88cc88")
+    static let synthBlue     = Color(red: 0.2, green: 0.6, blue: 1.0)
 }
 
 extension Color {

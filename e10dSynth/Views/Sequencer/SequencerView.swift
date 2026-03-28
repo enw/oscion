@@ -111,7 +111,7 @@ struct SequencerView: View {
                 let idx = vm.activePattern.internalVoiceIndex(for: track.id) ?? 0
                 return ("I\(idx + 1)", .synthGreen)
             case .midiOut(let ch):
-                return ("M\(ch)", Color(red: 0.2, green: 0.6, blue: 1.0))
+                return ("M\(ch)", .synthBlue)
             }
         }()
         return Button {
@@ -167,11 +167,4 @@ struct StepEditSheet: View {
         .background(Color.synthPanel)
         .presentationDetents([.height(260)])
     }
-}
-
-// Temporary stub — replaced in Task 5
-struct VoiceEditorSheet: View {
-    @Binding var track: Track
-    let internalSlotsFull: Bool
-    var body: some View { EmptyView() }
 }
